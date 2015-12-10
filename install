@@ -6,7 +6,8 @@ fi
 CURDIR=`pwd`
 OLDGOPATH="$GOPATH"
 export GOPATH="$CURDIR"
+export GOBIN="$CURDIR/bin"
 gofmt -w src
-go run src/main.go
+go install src/main.go
 export GOPATH="$OLDGOPATH"
 echo 'finished'
